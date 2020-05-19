@@ -1,0 +1,27 @@
+1. React.memo
+//Using react memo here to wrap this component to a wide unnecessary renders so that this
+//only re-renders this component only really renders when the props it depends on changed and not always
+//when the parent component changed.
+
+2. UseState vs Class based State 
+In class based state , whnever the state is updated the react merges it for you, i.e merges the
+prev-state with new State.
+whereas in Functional Component State, react does not merges it for you.
+But it can register multiple state.
+
+  //UseEffect - it is executed after every component render cyle.
+  //componentDidUpdate()
+  //useEffect() acts like componentDidUpdate: It runs the function AFTER EVERY COMPONENT UPDATE(re-render)
+  //1. Omit the Empty Array - runs for every render cycle.
+  //2. Empty Array - acts like componentDidMount: It runs ONLY ONCE(after the first render)
+  //
+
+React.memo
+  //This component will re-render only if the onLoadIngredients props change. Not for any props change.
+
+
+CleanUp Return UseEffect
+    //cleanup function - Cleanup will run for the previous effect before the new effect is applied.
+    //will run right before this function is executed next time. But not after this function is done but before next time.
+    // if you have [] as dependencies (i.e the effect only runs once), the cleanup function runs when the component gets unmouted.
+    //cleans the old timer.
